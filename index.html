@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Expedição com Picking — Mellone</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img-picking/img-web-logo.jpg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="label-header">
+    <div class="barcode"></div>
+    <div class="label-body">
+      <div class="label-title-row">
+        <div>
+          <span class="label-tag">MELLONE • EXPEDIÇÃO E-COMMERCE</span>
+          <h1>Guia do Processo<br>com Picking</h1>
+          <p class="label-sub">Passo a passo completo, do pedido até o motorista. Aqui está escrito <b>tudo</b>, inclusive o óbvio — se ficou na dúvida, a resposta está nesta folha.</p>
+        </div>
+        <img src="img-picking/mellone-simbolo-ink.png" alt="Mellone" class="label-logo">
+      </div>
+      <div class="label-meta">
+        <span><b>VERSÃO:</b> COMPLETA</span>
+        <span><b>SISTEMA:</b> NETVAREJO (PICKING)</span>
+        <span><b>RESPONSÁVEL:</b> ALEXANDRE</span>
+      </div>
+    </div>
+  </header>
+
+<!-- ÍNDICE -->
+  <nav class="toc">
+    <a href="#sistema">0 · Sistema</a>
+    <a href="#lider">1 · Líder</a>
+    <a href="#equipe">2 · Equipe</a>
+    <a href="#critica">Zona Crítica</a>
+    <a href="#fim">3 · Fim do dia</a>
+    <a href="#nunca">Nunca Fazer</a>
+    <a href="#problemas">4 · Problemas</a>
+  </nav>
+
+  <!-- FLUXO RESUMIDO -->
+  <div class="flow">
+    <div class="flow-step"><span class="who w-sis">Sistema</span><p>Emite as notas fiscais sozinho, o dia todo — inclusive enquanto a equipe trabalha.</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><span class="who w-lid">Líder</span><p>Imprime as folhas e resolve os pedidos pendentes.</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><span class="who w-eqp">Equipe</span><p>Separam, bipam, conferem e embalam.</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><span class="who w-mot">Motorista</span><p>Leva os sacos fechados pro despacho.</p></div>
+  </div>
+
+  <!-- SISTEMA -->
+  <section class="sec-sis" id="sistema">
+    <div class="sec-head">
+      <div class="sec-num">0</div>
+      <div>
+        <h2>O que o sistema já fez sozinho</h2>
+        <p class="who-line">Logo após o pedido ser feito pelo cliente</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">0.1</div><h3>Emissão automática das notas</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>O NetVarejo aceita os pedidos de todos os canais (Mercado Livre, Shopee, Netshoes, Shein etc.) e <b>emite a nota fiscal automaticamente dos pedidos confirmados</b>.</li>
+          <li>Mas tem uma regra: ele só aceita o pedido se o produto tiver <b>2 unidades ou mais no estoque</b> do sistema.</li>
+          <li>Se tiver <b>só 1 unidade (ou nenhuma)</b>, o pedido fica <b>PENDENTE</b> — ninguém mexe nele até o Líder liberar.</li>
+        </ul>
+        <div class="note tip">Por que essa regra existe? Para garantir que a emissão de nota saia só de pedidos realmente confiáveis. Às vezes o último par pode ter algum defeito, estar perdido no estoque, ou nem estar lá de verdade — por <b>"N"</b> motivos. A regra é uma proteção.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LÍDER -->
+  <section class="sec-lid" id="lider">
+    <div class="sec-head">
+      <div class="sec-num">1</div>
+      <div>
+        <h2>Início do dia</h2>
+        <p class="who-line">Quem faz: Líder</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">1.1</div><h3>Resolver problemas de endereço e cadastro</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Abrir o sistema e verificar os pedidos com problema de endereço, dados do cliente ou qualquer pendência de cadastro (são poucos pedidos assim).</li>
+          <li>Corrigir um por um <b>antes de qualquer outra coisa</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">1.2</div><h3>Imprimir as folhas de separação</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Imprimir <b>a folha de separação por canal</b>: Mercado Livre Flex, Shopee Flex, Netshoes, Mercado Livre, Shein, Shopee e os demais.</li>
+          <li>Conferir se a impressão saiu legível (referência, cor e tamanho visíveis). Folha borrada = reimprimir.</li>
+          <li>Deixar as folhas no lugar combinado para a equipe pegar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">1.3</div><h3>Tratar os pedidos PENDENTES</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Abrir a lista de pedidos que o sistema <b>não aceitou automaticamente</b> (os de estoque baixo).</li>
+          <li>Para cada pendente: verificar <b>fisicamente</b> (ou pedir pra alguém verificar na prateleira) se o produto realmente existe. Não vale confiar só no número do sistema — a dúvida é justamente essa.</li>
+          <li><b>Se o produto for encontrado:</b> emitir a nota fiscal manualmente e liberar o pedido. A partir daí a equipe faz o picking dele igual aos outros.</li>
+          <li><b>Se o produto NÃO for encontrado:</b> Avisar o Responsável, para tratar o pedido conforme o canal pede (cancelamento/transferência da loja), ou falar com o cliente para tentar trocar cor ou modelo.</li>
+          <li>Toda divergência deve ter o saldo corrigido no sistema <b>no mesmo dia</b>.</li>
+        </ul>
+        <div class="note warn">Prazo: todos os pendentes resolvidos <b>até as 10h</b>. Pendente esquecido = atraso de despacho = punição do marketplace na nossa conta.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">1.4</div><h3>Cancelamentos</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Assim que souber que um pedido foi <b>cancelado</b>, fazer o <b>procedimento de cancelamento no sistema na hora</b> — não deixar acumular pro fim do dia.</li>
+          <li>Cancelamento feito direito = estoque do sistema certo e nota fiscal tratada como deve.</li>
+        </ul>
+        <div class="note tip">Os dois lados se completam: o Líder <b>cancela no sistema</b> e a equipe <b>guarda o produto físico</b> de volta na prateleira. Se só um dos dois acontecer, o estoque desencontra.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="sec-eqp" id="equipe">
+    <div class="sec-head">
+      <div class="sec-num">2</div>
+      <div>
+        <h2>Separação, picking e embalagem</h2>
+        <p class="who-line">Quem faz: Equipe</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.1</div><h3>Pegar UMA folha por vez</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Pegar <b>uma única folha</b> de separação. Terminou todos os pedidos dela? Aí sim pega a próxima.</li>
+          <li>Olhar no topo da folha <b>de qual canal ela é</b> (Mercado Livre, Shopee...). Isso importa lá no final, na hora de ensacar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.2</div><h3>Coletar os produtos no estoque</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Ir até o estoque com a folha na mão e pegar <b>exatamente</b> o que está escrito: mesma referência, mesma cor, mesmo tamanho.</li>
+          <li>Ler a etiqueta da caixa do produto e comparar com a folha <b>letra por letra, número por número</b>. "Parecido" não serve. 37 não é 38. Preto não é marrom. Conferir o SKU do pedido com o SKU da etiqueta.</li>
+          <li>Não achou o produto na prateleira? <b>Não pega outro parecido no lugar.</b> Anota qual faltou e avisa o Líder na hora (a nota fiscal desse pedido já foi emitida, então quanto antes ele souber, melhor).</li>
+          <li>Levar tudo pra mesa de trabalho.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.3</div><h3>Bipar no sistema (picking)</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Na mesa, abrir o NetVarejo e entrar na <b>área do Picking</b>, com seu login e senha — isso é individual.</li>
+          <li>Digitar/buscar o <b>número do pedido</b> que está na folha e abrir o pedido.</li>
+          <li>Pegar o leitor e <b>bipar o código de barras da caixa do produto</b>. Esperar o sistema confirmar.</li>
+          <li><b>Sistema confirmou (deu OK)?</b> Ele vai imprimir <b>sozinho</b> a DANFE e a etiqueta de envio daquele pedido. Pegar as duas na impressora e deixar junto do produto.</li>
+          <li><b>Sistema recusou o bip?</b> Significa que o produto bipado não bate com o pedido. Primeiro confere se você pegou a caixa certa. Pegou certo e mesmo assim recusou? <b>Para tudo e chama o Responsável</b> — pode ser erro de cadastro do código de barras ou etiqueta colada errada, e isso precisa ser corrigido, não contornado.</li>
+        </ul>
+        <div class="note stop">Se o bip recusar, NUNCA tente "dar um jeito" de finalizar o pedido por fora. O sistema recusando é ele te protegendo de mandar produto errado.</div>
+        <div class="note warn">Pedido com mais de um produto? Bipar <b>todos os itens</b>, um por um. Só termina quando o sistema confirmar o pedido completo.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.4</div><h3>Etiqueta e DANFE: um pedido por vez</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Assim que a etiqueta e a DANFE saírem da impressora, <b>juntar com o produto daquele pedido imediatamente</b>.</li>
+          <li><b>Conferir se o QR Code e o código de barras saíram perfeitos</b> antes de colar — sem falhas, listras, borrões ou partes apagadas/cortadas. Se o código sair falhado, <b>a transportadora não consegue bipar</b> e o pacote fica parado, é recusado ou volta pra cá. Saiu ruim? <b>Reimprime</b> e rasga a etiqueta defeituosa na hora, pra ninguém colar por engano.</li>
+          <li>Regra de ouro: <b>nunca ter etiqueta de dois pedidos diferentes soltas na bancada ao mesmo tempo</b>. Etiqueta trocada = cliente A recebe o pedido do cliente B = duas devoluções, dois fretes, dois clientes bravos.</li>
+          <li>Só depois de fechar (embalar) um pedido é que se bipa o próximo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.5</div><h3>Conferência física (OBRIGATÓRIA)</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Fazer o checklist da <b>ZONA CRÍTICA</b> logo abaixo. Em <b>todos</b> os pedidos, sem exceção, mesmo com o bip aprovado.</li>
+        </ul>
+        <div class="note tip">O bip confere a <b>caixa</b>. Ele não enxerga o que tem <b>dentro</b> dela. Quem enxerga é você.</div>
+      </div>
+    </div>
+
+    <!-- ZONA CRÍTICA -->
+    <div id="critica" class="critica-block">
+    <div class="critical">
+      <h2>🔍 Zona crítica — conferir antes de embalar</h2>
+      <p class="why">O sistema garante que a caixa é a do pedido. Esses pontos, só o olho humano pega. É aqui que a gente evita devolução, reclamação e nota baixa no marketplace.</p>
+      <div class="check-grid">
+        <div class="check">
+          <span class="box"></span><h4>Abrir a caixa</h4>
+          <p>Sempre. Toda caixa, todo pedido. Não existe "essa não precisa".</p>
+        </div>
+        <div class="check">
+          <span class="box"></span><h4>Etiqueta</h4>
+          <p>Verificar se a etiqueta colada na caixa é o mesmo produto/referência que está dentro da caixa.</p>
+        </div>
+        <div class="check">
+          <span class="box"></span><h4>Par correto</h4>
+          <p>Tirar os dois pés. Um esquerdo + um direito, mesmo modelo, mesma cor, mesmo tamanho nos dois.</p>
+        </div>
+        <div class="check">
+          <span class="box"></span><h4>Tamanho confere</h4>
+          <p>O número no solado/palmilha bate com o da etiqueta da caixa e com o do pedido na tela.</p>
+        </div>
+        <div class="check">
+          <span class="box"></span><h4>Sem avaria</h4>
+          <p>Olhar cola escapando, costura solta, mancha, deformação, e o estado da própria caixa.</p>
+        </div>
+        <div class="check">
+          <span class="box"></span><h4>Seda e cartão de obrigado</h4>
+          <p>Sempre passar a seda em torno do calçado e colocar o cartão de obrigado com a frente para cima, para que, quando o cliente abrir a caixa, ele veja o cartão.</p>
+        </div>
+      </div>
+      <p style="font-size:14.5px;color:#d9d4c8;position:relative;z-index:1;padding-bottom:8px">Achou avaria ou par errado? <b style="color:var(--amarelo)">Não embala.</b> Separa o produto, chama o Líder pra trocar o item, e a peça com defeito vai pro lugar de avariados — nunca de volta pra prateleira como se nada tivesse acontecido.</p>
+    </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.6</div><h3>Embalar</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Embalar o produto com o material padrão do canal — <b>NUNCA esquecer de colocar o cartão de obrigado</b>, e o brinde promocional <b>quando tiver</b>.</li>
+          <li>Colar a <b>etiqueta de envio</b> por fora, reta, sem dobra em cima do QRcode/código de barras (código e QRcode dobrados não bipam na transportadora).</li>
+          <li>Colocar a <b>DANFE</b> onde o canal exige (dentro/fora, conforme o padrão de cada marketplace).</li>
+          <li>Antes de fechar, bater o olho uma última vez: <b>a etiqueta colada é desse produto mesmo?</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">2.7</div><h3>Saco e despacho</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Colocar o pedido embalado no <b>saco do canal correspondente</b>. Pedido do Mercado Livre no saco do Mercado Livre, da Shopee no da Shopee, do Mercado Livre Flex no do Mercado Livre Flex — nunca misturar.</li>
+          <li>Terminou todos os pedidos da folha? Riscar/marcar a folha como concluída, assinar, e arquivar na pasta e pegar a próxima.</li>
+          <li>Quando todos os pedidos do canal estiverem embalados, fechar o saco e deixar no ponto do motorista.</li>
+          <li>Sobrou produto na mesa sem pedido (pedido cancelado ou pendente)? <b>Devolver pra prateleira no mesmo dia</b> e avisar o Líder ou Responsável pra garantir que o estoque do sistema está certo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ANTES DE IR EMBORA -->
+  <section class="sec-fim" id="fim">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <div>
+        <h2>Antes de ir embora</h2>
+        <p class="who-line">Quem faz: Equipe e Líder</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><h3>Tarefas de fim de dia</h3></div>
+      <div class="step-body">
+        <ul>
+          <li>Guardar os <b>produtos cancelados</b> de volta no lugar certo do estoque.</li>
+          <li>Repor na prateleira os <b>produtos mais vendidos</b>, pra começar o dia seguinte já abastecido.</li>
+          <li><b>Produtos novos:</b> colar a etiqueta e guardar no estoque, já identificados e no lugar certo.</li>
+          <li>Receber e <b>dar saída nas transferências</b> do dia.</li>
+          <li>Repor as <b>embalagens</b> na mesa de trabalho (caixas, sacos, cartões de obrigado, fita).</li>
+        </ul>
+        <div class="note ok">Manter o ambiente <b>sempre limpo e organizado ao sair</b>. O começo do próximo dia já tem que estar preparado — bancada livre, material reposto e nenhuma pendência física largada.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUNCA -->
+  <section id="nunca">
+    <div class="never">
+      <h2>⛔ O que NUNCA fazer</h2>
+      <ul>
+        <li>Embalar pedido <b>sem bipar</b> ou <b>sem conferir por dentro</b> — nem que esteja corrido, nem que "seja só um".</li>
+        <li>Substituir produto que faltou por outro "parecido" sem autorização.</li>
+        <li>Forçar/contornar o sistema quando o bip recusar.</li>
+        <li>Manusear etiquetas de dois pedidos ao mesmo tempo na bancada.</li>
+        <li>Pegar duas folhas de separação de uma vez.</li>
+        <li>Colocar pedido no saco do canal errado.</li>
+        <li>Devolver produto avariado pra prateleira como se estivesse bom.</li>
+        <li>Encontrar um problema (falta, divergência, defeito, erro de cadastro) e <b>não avisar ninguém</b>. Problema escondido sempre volta maior.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section id="problemas">
+    <div class="sec-head">
+      <div class="sec-num">4</div>
+      <div>
+        <h2>Deu problema? Olha aqui primeiro</h2>
+        <p class="who-line" style="color:#6b6557">Vale pra todo mundo</p>
+      </div>
+    </div>
+    <table class="problems">
+      <tr><th>Situação</th><th>O que fazer</th></tr>
+      <tr>
+        <td>Sistema / NetVarejo fora do ar</td>
+        <td>Parar a bipagem e avisar o Responsável. Não embalar nada sem a validação do sistema. Esperar voltar ou receber orientação do processo manual de emergência.</td>
+      </tr>
+      <tr>
+        <td>Impressora travou ou não imprimiu a etiqueta/DANFE</td>
+        <td>Usar a impressora reserva. Nunca embalar pedido sem a DANFE e a etiqueta dele. Se imprimiu duplicado, rasgar a cópia extra na hora (etiqueta duplicada solta = pedido trocado esperando pra acontecer).</td>
+      </tr>
+      <tr>
+        <td>Bip recusado, mas o produto está certo</td>
+        <td>Possível erro de cadastro. Não forçar. Chamar o Responsável pra corrigir o cadastro antes de seguir.</td>
+      </tr>
+      <tr>
+        <td>Produto da folha não está na prateleira</td>
+        <td>Avisar o Líder imediatamente. A nota fiscal já foi emitida e cancelamento de nota tem prazo legal — não dá pra deixar pra depois.</td>
+      </tr>
+      <tr>
+        <td>Produto com avaria ou par trocado dentro da caixa</td>
+        <td>Não embalar. Separar a peça, chamar o Líder pra trocar o item do pedido, e mandar a avariada pro local de avariados.</td>
+      </tr>
+      <tr>
+        <td>Sobrou produto na mesa no fim do dia</td>
+        <td>Devolver pra prateleira no mesmo dia e confirmar com o Líder que aquele produto não é de nenhum pedido.</td>
+      </tr>
+      <tr>
+        <td>Qualquer coisa que não está nesta folha</td>
+        <td>Chamar o Responsável. Na dúvida, é melhor perguntar o óbvio do que despachar errado.</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    MELLONE • V/COMPLETA • EXPEDIÇÃO E-COMMERCE COM PICKING<br>
+    Achou algo errado ou desatualizado neste guia? Avise o Responsável para ajuste.
+  </footer>
+
+</div>
+</body>
+</html>
