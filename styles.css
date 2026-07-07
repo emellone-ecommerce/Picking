@@ -342,3 +342,34 @@ section{scroll-margin-top:16px}
   border-radius:999px;padding:6px 14px;
 }
 .toc a:hover{background:var(--ink);color:var(--paper)}
+
+.back-to-top{
+  position:fixed;
+  bottom:24px;right:24px;
+  width:50px;height:50px;
+  background:var(--ink);
+  color:var(--paper);
+  border:2px solid var(--paper);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo Black',sans-serif;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:3px 3px 0 rgba(28,26,22,.25);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+  z-index:999;
+}
+.back-to-top.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+.back-to-top:hover{
+  background:var(--lider);
+}
+@media print{
+  .back-to-top{display:none}
+}

@@ -12,7 +12,7 @@
 <div class="wrap">
 
   <!-- HEADER -->
-  <header class="label-header">
+  <header class="label-header" id="topo">
     <div class="barcode"></div>
     <div class="label-body">
       <div class="label-title-row">
@@ -425,6 +425,19 @@
     Achou algo errado ou desatualizado neste guia? Avise o Responsável para ajuste.
   </footer>
 
+  <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">🔝</a>
+
 </div>
+  
+  <script>
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+</script>
 </body>
 </html>
