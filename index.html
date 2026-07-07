@@ -11,9 +11,18 @@
 <body>
 
 
-
   <div class="progress-bar"><div class="progress-fill"></div></div>
 <div class="wrap">
+  <!-- CHANGELOG / STICKER LATERAL -->
+  <div class="changelog-sticker">
+    <div class="changelog-tag">📌 Novidades</div>
+    <ul class="changelog-list">
+      <li><b>07/07/2026</b> — Busca rápida com destaque de palavra</li>
+      <li><b>07/07/2026</b> — Círculo de progresso de leitura</li>
+      <li><b>06/07/2026</b> — Botão de voltar ao topo</li>
+      <li><b>06/07/2026</b> — Novo passo 1.5: Mercado Livre sem etiqueta liberada</li>
+    </ul>
+  </div>
 
   <!-- HEADER -->
   <header class="label-header" id="topo">
@@ -34,6 +43,12 @@
       </div>
     </div>
   </header>
+
+  <!-- BUSCA RÁPIDA -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 Buscar por palavra-chave (ex: cancelamento, etiqueta...)">
+    <span id="searchCount"></span>
+  </div>
 
 <!-- ÍNDICE -->
   <nav class="toc">
@@ -351,7 +366,7 @@
     </div>
 
     <div class="step">
-      <div class="step-top"><h3>Tarefas de fim de dia</h3></div>
+      <div class="step-top"><h3>Tarefas de fim do dia</h3></div>
       <div class="step-body">
         <ul>
           <li>Guardar os <b>produtos cancelados</b> de volta no lugar certo do estoque.</li>
@@ -430,7 +445,7 @@
   </footer>
 
   <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">🔝</a>
-  
+
 <!-- CÍRCULO DE PROGRESSO DE LEITURA -->
   <div class="progress-circle" id="progressCircle">
     <svg width="50" height="50" viewBox="0 0 50 50">
@@ -466,6 +481,68 @@
     } else {
       progressText.textContent = scrollPercent + '%';
     }
+  });
+</script>
+
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const searchCount = document.getElementById('searchCount');
+  const allSections = document.querySelectorAll('section');
+  const allSteps = document.querySelectorAll('.step');
+
+  // Guarda o HTML original de cada card, antes de qualquer highlight
+  allSteps.forEach(step => {
+    step.dataset.original = step.innerHTML;
+  });
+
+  function escapeRegex(str){
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.trim();
+    const termLower = term.toLowerCase();
+    let totalVisible = 0;
+
+    allSections.forEach(section => {
+      const steps = section.querySelectorAll('.step');
+      let sectionHasMatch = false;
+
+      steps.forEach(step => {
+        // Sempre volta pro texto original antes de checar de novo
+        step.innerHTML = step.dataset.original;
+
+        if (term === '') {
+          step.classList.remove('hidden', 'title-match');
+          return;
+        }
+
+        const title = step.querySelector('h3');
+        const titleMatches = title && title.textContent.toLowerCase().includes(termLower);
+        const bodyMatches = step.textContent.toLowerCase().includes(termLower);
+
+        if (bodyMatches) {
+          // Destaca a palavra em todo o card
+          const regex = new RegExp('(' + escapeRegex(term) + ')', 'gi');
+          step.innerHTML = step.dataset.original.replace(regex, '<mark>$1</mark>');
+
+          step.classList.remove('hidden');
+          step.classList.toggle('title-match', titleMatches);
+          sectionHasMatch = true;
+          totalVisible++;
+        } else {
+          step.classList.add('hidden');
+          step.classList.remove('title-match');
+        }
+      });
+
+      if (steps.length > 0) {
+        section.classList.toggle('hidden', term !== '' && !sectionHasMatch);
+      }
+    });
+
+    searchCount.textContent = term === '' ? '' : `${totalVisible} resultado(s) encontrado(s)`;
   });
 </script>
 </body>

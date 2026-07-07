@@ -327,17 +327,6 @@ footer{
 @media print{
   body{background:#fff;padding:0}
   .step,.label-header{box-shadow:none}
-
-  /* Esconde tudo que só faz sentido na tela */
-  .toc{display:none !important} 
-  .back-to-top{display:none}
-  .progress-circle{display:none}
-
-  /* Evita cortar um card de passo no meio, entre duas páginas */
-  .step,.check,.note,.critical{page-break-inside:avoid}
-
-  /* Evita começar uma seção nova colada no rodapé da folha anterior */
-  section{page-break-inside:avoid}
 }
 
 /* ---------- Índice ---------- */
@@ -423,4 +412,95 @@ section{scroll-margin-top:16px}
   font-family:'JetBrains Mono',monospace;
   font-size:18px;font-weight:700;
   color:var(--ink);
+}
+
+/* ---------- Busca rápida ---------- */
+.search-box{
+  margin:20px 0 0;
+  position:relative;
+}
+#searchInput{
+  width:100%;
+  padding:12px 16px;
+  font-family:'Barlow',sans-serif;
+  font-size:15px;
+  border:2px solid var(--ink);
+  border-radius:6px;
+  background:var(--paper);
+  color:var(--ink);
+}
+#searchInput:focus{
+  outline:none;
+  border-color:var(--lider);
+}
+#searchCount{
+  display:block;
+  margin-top:6px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  color:#6b6557;
+}
+.step.hidden,section.hidden{display:none}
+
+mark{
+  background:var(--amarelo);
+  color:var(--ink);
+  padding:0 2px;
+  border-radius:2px;
+}
+.step.title-match{
+  border-color:var(--amarelo);
+  box-shadow:4px 4px 0 rgba(245,184,0,.35);
+}
+
+/* ---------- Changelog / sticker lateral ---------- */
+/* ---------- Changelog / sticker lateral ---------- */
+.changelog-sticker{
+  position:fixed;
+  top:24px;left:24px;
+  width:280px;
+  background:var(--paper);
+  border:2px solid var(--ink);
+  border-radius:6px;
+  box-shadow:4px 4px 0 rgba(28,26,22,.18);
+  z-index:998;
+  overflow:hidden;
+}
+.changelog-tag{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.5px;
+  padding:10px 16px;
+}
+.changelog-list{
+  list-style:none;
+  padding:14px 16px;
+  margin:0;
+}
+.changelog-list li{
+  font-size:14px;
+  line-height:1.5;
+  margin-bottom:12px;
+  color:#4a463e;
+}
+.changelog-list li:last-child{
+  margin-bottom:0;
+}
+.changelog-list b{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;
+  color:var(--lider);
+  display:block;
+  margin-bottom:2px;
+}
+@media print{
+  .changelog-sticker{display:none}
+}
+@media (max-width:640px){
+  .changelog-sticker{
+    position:static;
+    width:100%;
+    margin-bottom:16px;
+  }
 }
