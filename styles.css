@@ -327,6 +327,17 @@ footer{
 @media print{
   body{background:#fff;padding:0}
   .step,.label-header{box-shadow:none}
+
+  /* Esconde tudo que só faz sentido na tela */
+  .toc{display:none}
+  .back-to-top{display:none}
+  .progress-circle{display:none}
+
+  /* Evita cortar um card de passo no meio, entre duas páginas */
+  .step,.check,.note,.critical{page-break-inside:avoid}
+
+  /* Evita começar uma seção nova colada no rodapé da folha anterior */
+  section{page-break-inside:avoid}
 }
 
 /* ---------- Índice ---------- */
@@ -372,4 +383,44 @@ section{scroll-margin-top:16px}
 }
 @media print{
   .back-to-top{display:none}
+}
+.progress-circle{
+  position:fixed;
+  bottom:24px;right:86px;
+  width:50px;height:50px;
+  z-index:999;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.progress-circle.show{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+.progress-circle svg{
+  transform:rotate(-90deg);
+}
+.progress-bg{
+  fill:var(--paper);
+  stroke:var(--kraft-light);
+  stroke-width:4;
+}
+.progress-ring{
+  fill:none;
+  stroke:var(--lider);
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-dasharray:132;
+  stroke-dashoffset:132;
+  transition:stroke-dashoffset .1s ease-out;
+}
+.progress-text{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'JetBrains Mono',monospace;
+  font-size:18px;font-weight:700;
+  color:var(--ink);
 }

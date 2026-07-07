@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+
+  <div class="progress-bar"><div class="progress-fill"></div></div>
 <div class="wrap">
 
   <!-- HEADER -->
@@ -426,16 +430,41 @@
   </footer>
 
   <a href="#topo" class="back-to-top" aria-label="Voltar ao topo">🔝</a>
-
+  
+<!-- CÍRCULO DE PROGRESSO DE LEITURA -->
+  <div class="progress-circle" id="progressCircle">
+    <svg width="50" height="50" viewBox="0 0 50 50">
+      <circle class="progress-bg" cx="25" cy="25" r="21"></circle>
+      <circle class="progress-ring" cx="25" cy="25" r="21"></circle>
+    </svg>
+    <span class="progress-text">0%</span>
+  </div>
 </div>
   
   <script>
   const backToTop = document.querySelector('.back-to-top');
+  const progressCircle = document.getElementById('progressCircle');
+  const progressRing = document.querySelector('.progress-ring');
+  const progressText = document.querySelector('.progress-text');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) {
       backToTop.classList.add('show');
+      progressCircle.classList.add('show');
     } else {
       backToTop.classList.remove('show');
+      progressCircle.classList.remove('show');
+    }
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+    progressRing.style.strokeDashoffset = 132 - (132 * scrollPercent / 100);
+    if (scrollPercent >= 100) {
+      progressText.textContent = '😄';
+    } else {
+      progressText.textContent = scrollPercent + '%';
     }
   });
 </script>
