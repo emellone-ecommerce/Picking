@@ -131,6 +131,81 @@
         <div class="note tip">Os dois lados se completam: o Líder <b>cancela no sistema</b> e a equipe <b>guarda o produto físico</b> de volta na prateleira. Se só um dos dois acontecer, o estoque desencontra.</div>
       </div>
     </div>
+  <div class="step">
+      <div class="step-top"><div class="step-n">1.5</div><h3>Pedido do Mercado Livre sem etiqueta liberada</h3></div>
+      <div class="step-body">
+
+        <!-- GATILHO: como esse pedido chega até você -->
+        <ul>
+          <li>Durante o picking, a equipe clica em <b>Carregar Etiquetas</b> e um pedido do ML fica com a <b>coluna Link Etiqueta vazia</b>. Ela não trabalha nele — <b>passa o número pra você</b>, com o produto já na mão.</li>
+        </ul>
+        <div class="note tip"><b>Entenda a ponte:</b> a <b>Plugg.to</b> liga o <b>Mercado Livre</b> ao <b>NetVarejo</b>. O pedido nasce no ML, passa pela Plugg (que captura a etiqueta) e chega no NetVarejo pro picking. Link Etiqueta vazio = a informação <b>travou nessa ponte</b>.</div>
+
+        <!-- DIAGNÓSTICO -->
+        <p style="margin:16px 0 6px;font-weight:700">Passo 1 — Diagnóstico: jogar o número do pedido no Mercado Livre</p>
+        <ul>
+          <li>Consultar o <b>número do pedido</b> no Mercado Livre e ver em qual das 3 situações ele está: <b>cancelado</b>, <b>envio hoje</b> ou <b>envio outro dia</b>. O caminho a seguir depende disso.</li>
+        </ul>
+
+        <!-- GALHO 1: CANCELADO -->
+        <p style="margin:16px 0 6px;font-weight:700">❌ Se estiver CANCELADO</p>
+        <ul>
+          <li>Seguir o <b>procedimento de cancelamento do passo 1.4</b>, e a equipe guarda o produto de volta na prateleira.</li>
+        </ul>
+
+        <!-- GALHO 2 (A): ENVIO HOJE → forçar na Plugg.to -->
+        <p style="margin:16px 0 6px;font-weight:700">🚚 Se for ENVIO HOJE → forçar na Plugg.to</p>
+        <ul>
+          <li>Na Plugg, abrir o menu <b>Pedidos</b>.
+            <img class="shot" src="img-picking/ml-01-menu-pedidos.jpg" alt="Menu Pedidos na Plugg">
+          </li>
+          <li>No campo <b>Demais ID</b>, digitar o <b>ID do NetVarejo</b> (ex.: <span class="mono">223771</span>) e clicar em <b>Buscar</b>.
+            <img class="shot" src="img-picking/ml-02-demais-id.jpg" alt="Campo Demais ID">
+          </li>
+          <li>O pedido aparece como <b>Faturado</b>. Na coluna <b>Ações</b>, clicar no <b>lápis</b>.
+            <img class="shot" src="img-picking/ml-03-faturado-lapis.jpg" alt="Pedido faturado, botão de editar">
+          </li>
+          <li>Em <b>Editar Pedido</b>, clicar em <b>Ver Dados de Entrega</b>.
+            <img class="shot" src="img-picking/ml-04-ver-dados-entrega.jpg" alt="Botão Ver Dados de Entrega">
+          </li>
+          <li>Rolar até o fim e clicar em <b>Salvar informações</b>. <b>É esse clique que destrava o pedido.</b>
+            <img class="shot" src="img-picking/ml-05-salvar-informacoes.jpg" alt="Botão Salvar informações">
+          </li>
+          <li>No aviso <b>"Deseja continuar?"</b>, clicar em <b>Salvar</b> (é normal não ter rastreio).
+            <img class="shot narrow" src="img-picking/ml-06-deseja-continuar.jpg" alt="Aviso Deseja continuar">
+          </li>
+          <li>Aparece <b>"Salvo com sucesso"</b> → <b>OK</b>.
+            <img class="shot narrow" src="img-picking/ml-07-salvo-ok.jpg" alt="Confirmação salvo">
+          </li>
+          <li>Voltar pra lista na <b>setinha ←</b>. Os Dados de Entrega já vêm como <b>MercadoLivre Envios</b>.
+            <img class="shot" src="img-picking/ml-08-voltar-lista.jpg" alt="Setinha de voltar">
+          </li>
+          <li>Marcar o <b>checkbox</b> do pedido na lista.
+            <img class="shot" src="img-picking/ml-09-marcar-checkbox.jpg" alt="Marcar checkbox">
+          </li>
+          <li>Nos <b>três pontinhos</b> (⋮) → <b>Notificações</b> → <b>Reenviar</b> (obrigatório).
+            <img class="shot narrow" src="img-picking/ml-10-reenviar.jpg" alt="Opção Reenviar">
+          </li>
+          <li>Clicar em <b>Buscar</b> de novo pra atualizar.
+            <img class="shot" src="img-picking/ml-11-buscar.jpg" alt="Botão Buscar">
+          </li>
+        </ul>
+        <div class="note ok">Deu certo quando o status vira <b>"Envio informado"</b> na lista.
+          <img class="shot" src="img-picking/ml-12-envio-informado.jpg" alt="Status Envio informado">
+        </div>
+
+
+
+       <p style="margin:16px 0 6px;font-weight:700">📅 Se for ENVIO OUTRO DIA → picking adiantado + pasta</p>
+        <ul>
+          <li>Fazer o <b>picking normal</b> do pedido. Como a etiqueta ainda não foi liberada, o NetVarejo solta <b>só a DANFE</b> (sem etiqueta de envio).</li>
+          <li><b>Não embalar.</b> Deixar a caixa com o produto separado no <b>lugar combinado para pedidos de envio em outro dia</b>.</li>
+          <li>Pegar a <b>DANFE</b>, escrever <b>atrás a data de envio </b> (Por exemplo, na pasta "10/07") e guardar na <b>pasta de etiquetas para envio outro dia</b>.</li>
+          <li><b>Todos os dias</b>, repetir o diagnóstico (passo 1) nos pedidos dessa pasta: se a etiqueta já tiver liberado no Mercado Livre, <b>emitir a etiqueta, pegar a caixa guardada e embalar</b> normalmente.</li>
+        </ul>
+      </div>
+    </div>
+    
   </section>
 
   <!-- EQUIPE -->
