@@ -329,7 +329,7 @@ footer{
   .step,.label-header{box-shadow:none}
 
   /* Esconde tudo que só faz sentido na tela */
-  .toc{display:none}
+  .toc{display:none !important} 
   .back-to-top{display:none}
   .progress-circle{display:none}
 
