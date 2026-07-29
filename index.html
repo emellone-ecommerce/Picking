@@ -17,6 +17,8 @@
   <div class="changelog-sticker">
     <div class="changelog-tag">📌 Novidades</div>
     <ul class="changelog-list">
+      <li><b>29/07/2026</b> — Novo passo 1.3: impressão pelo Pendentes de Impressão, Flex antes dos canais</li>
+      <li><b>29/07/2026</b> — Pendentes passaram a vir antes da impressão (agora 1.2)</li>
       <li><b>07/07/2026</b> — Busca rápida com destaque de palavra</li>
       <li><b>07/07/2026</b> — Círculo de progresso de leitura</li>
       <li><b>06/07/2026</b> — Botão de voltar ao topo</li>
@@ -65,7 +67,7 @@
   <div class="flow">
     <div class="flow-step"><span class="who w-sis">Sistema</span><p>Emite as notas fiscais sozinho, o dia todo — inclusive enquanto a equipe trabalha.</p></div>
     <div class="flow-arrow">→</div>
-    <div class="flow-step"><span class="who w-lid">Líder</span><p>Imprime as folhas e resolve os pedidos pendentes.</p></div>
+    <div class="flow-step"><span class="who w-lid">Líder</span><p>Resolve os pedidos pendentes e imprime as folhas.</p></div>
     <div class="flow-arrow">→</div>
     <div class="flow-step"><span class="who w-eqp">Equipe</span><p>Separam, bipam, conferem e embalam.</p></div>
     <div class="flow-arrow">→</div>
@@ -116,18 +118,7 @@
     </div>
 
     <div class="step">
-      <div class="step-top"><div class="step-n">1.2</div><h3>Imprimir as folhas de separação</h3></div>
-      <div class="step-body">
-        <ul>
-          <li>Imprimir <b>a folha de separação por canal</b>: Mercado Livre Flex, Shopee Flex, Netshoes, Mercado Livre, Shein, Shopee e os demais.</li>
-          <li>Conferir se a impressão saiu legível (referência, cor e tamanho visíveis). Folha borrada = reimprimir.</li>
-          <li>Deixar as folhas no lugar combinado para a equipe pegar.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-top"><div class="step-n">1.3</div><h3>Tratar os pedidos PENDENTES</h3></div>
+      <div class="step-top"><div class="step-n">1.2</div><h3>Tratar os pedidos PENDENTES</h3></div>
       <div class="step-body">
         <ul>
           <li>Abrir a lista de pedidos que o sistema <b>não aceitou automaticamente</b> (os de estoque baixo).</li>
@@ -135,8 +126,58 @@
           <li><b>Se o produto for encontrado:</b> emitir a nota fiscal manualmente e liberar o pedido. A partir daí a equipe faz o picking dele igual aos outros.</li>
           <li><b>Se o produto NÃO for encontrado:</b> Avisar o Responsável, para tratar o pedido conforme o canal pede (cancelamento/transferência da loja), ou falar com o cliente para tentar trocar cor ou modelo.</li>
           <li>Toda divergência deve ter o saldo corrigido no sistema <b>no mesmo dia</b>.</li>
+          <li>Resolvido e liberado? <b>Imprimir a folha desse pedido</b> e deixar junto com as folhas da equipe.</li>
         </ul>
         <div class="note warn">Prazo: todos os pendentes resolvidos <b>até as 10h</b>. Pendente esquecido = atraso de despacho = punição do marketplace na nossa conta.</div>
+        <div class="note tip">Os pendentes vêm <b>antes</b> da impressão do dia (passo 1.3) de propósito: liberando eles primeiro, entram na mesma leva de impressão e a equipe não precisa voltar depois pra um pedido solto.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-top"><div class="step-n">1.3</div><h3>Imprimir as folhas de separação</h3></div>
+      <div class="step-body">
+
+        <p style="margin:0 0 8px">Quem <b>imprime</b> de verdade é sempre o mesmo botão: <b>Produtos e Fotos → Pendentes de Impressão</b>. Tudo que vem antes dele (Filtrar Canal, Tipo de Entrega, Filtrar Entrega) serve só pra <b>escolher quais pedidos</b> vão sair naquela impressão.</p>
+        <img class="shot" src="img-picking/imp-01-tela-separacao.jpg" alt="Tela de separação por canais, com a lista de pedidos e a barra de ferramentas">
+
+        <div class="note stop"><b>Imprimiu, não volta.</b> No momento em que a folha sai, o sistema muda o status daqueles pedidos para <b>impresso para separação</b> e eles <b>saem da fila</b> — não dá pra imprimir de novo do mesmo jeito. É exatamente por isso que a gente usa o <b>Pendentes de Impressão</b>: ele puxa só o que ainda não foi impresso. Então <b>respeite a ordem</b> e confira a folha antes de seguir pro próximo.</div>
+
+        <!-- BLOCO 1: FLEX -->
+        <p style="margin:18px 0 6px;font-weight:700">🏍️ Bloco 1 — FLEX / MOTOBOY (imprimir PRIMEIRO)</p>
+        <p style="margin:0 0 8px;font-size:14.5px">O Flex vem na frente porque o <b>prazo do motoboy é mais curto</b> (sai antes das 13h da tarde) e pra não misturar com os canais normais. Faça <b>um canal por vez</b>: primeiro o Shopee Flex, depois o Mercado Livre Flex.</p>
+        <ul>
+          <li>Clicar em <b>Filtrar Canal</b> e escolher o canal (ex.: <b>Shopee</b>).</li>
+          <li>No cabeçalho da coluna <b>Tipo de Entrega</b>, abrir o funil, marcar <b>MOTOBOY</b> e clicar em <b>Confirmar</b>.
+            <img class="shot" src="img-picking/imp-02-filtro-motoboy.jpg" alt="Filtro da coluna Tipo de Entrega aberto, com a opção MOTOBOY marcada e os botões Confirmar e Cancelar">
+          </li>
+          <li>Clicar no botão <b>Filtrar Entrega</b>, lá na barra de cima. É esse clique que faz o sistema entender que a impressão é <b>só do Flex daquele canal</b>.</li>
+          <li>Clicar em <b>Produtos e Fotos → Pendentes de Impressão</b> e imprimir.
+            <img class="shot" src="img-picking/imp-03-pendentes-impressao.jpg" alt="Menu Produtos e Fotos aberto, mostrando as opções Todos os Pedidos e Pendentes de Impressão">
+          </li>
+          <li>Repetir os mesmos passos para o <b>Mercado Livre Flex</b>.</li>
+        </ul>
+
+        <div class="note warn"><b>Reiniciar a tela antes do próximo bloco.</b> Sair da página e voltar. É manha do sistema: o filtro anterior <b>não limpa sozinho</b> e acaba se misturando com o filtro seguinte — resultado, a impressão sai errada.</div>
+
+        <!-- BLOCO 2: CANAIS -->
+        <p style="margin:18px 0 6px;font-weight:700">📦 Bloco 2 — CANAIS NORMAIS (depois do Flex)</p>
+        <p style="margin:0 0 8px;font-size:14.5px">Aqui não tem filtro de motoboy — é mais simples. Para <b>cada canal</b>, na ordem abaixo:</p>
+        <ul>
+          <li>Clicar em <b>Filtrar Canal</b> e escolher o canal.</li>
+          <li>Clicar em <b>Produtos e Fotos → Pendentes de Impressão</b> e imprimir.</li>
+          <li>Só então passar para o próximo canal da ordem.</li>
+        </ul>
+
+        <div class="note ok"><b>A ordem dos canais é esta, e não é aleatória:</b><br>
+          1º <b>Netshoes</b> → 2º <b>Mercado Livre</b> → 3º <b>Shein</b> → 4º <b>TikTok</b> → 5º <b>Shopee</b><br>
+          É a mesma ordem em que a equipe separa e embala, definida pelo <b>prazo de envio</b> de cada canal. Imprimir fora de ordem embaralha a fila da equipe.</div>
+
+        <!-- FECHAMENTO -->
+        <p style="margin:18px 0 6px;font-weight:700">✅ Antes de entregar as folhas</p>
+        <ul>
+          <li>Conferir se a impressão saiu <b>legível</b> (referência, cor e tamanho visíveis). Folha borrada atrapalha a separação inteira.</li>
+          <li>Deixar as folhas no lugar combinado, <b>na ordem em que foram impressas</b> — Flex por cima, depois os canais.</li>
+        </ul>
       </div>
     </div>
 
