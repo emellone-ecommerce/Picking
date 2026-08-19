@@ -314,7 +314,7 @@ footer{
 /* ---------- Cabeçalho no celular ---------- */
 @media (max-width:560px){
   .label-title-row{
-    flex-direction:column-reverse;   /* logo em cima, título embaixo */
+    flex-direction:column-reverse;
     align-items:flex-start;
   }
   .label-logo{height:52px}
@@ -453,7 +453,6 @@ mark{
   box-shadow:4px 4px 0 rgba(245,184,0,.35);
 }
 
-
 /* ---------- Changelog / sticker lateral ---------- */
 .changelog-sticker{
   position:fixed;
@@ -494,6 +493,24 @@ mark{
   display:block;
   margin-bottom:2px;
 }
+
+/* ---------- Changelog links ---------- */
+.changelog-list a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dashed var(--kraft);
+  transition:color .15s ease, border-color .15s ease;
+}
+.changelog-list a:hover{
+  color:var(--kraft);
+  border-bottom-color:transparent;
+}
+
+/* ---------- Âncoras dos passos ---------- */
+[id^="passo-"]{
+  scroll-margin-top:24px;
+}
+
 @media print{
   .changelog-sticker{display:none}
 }
